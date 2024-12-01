@@ -69,8 +69,8 @@ def read_file(file_name):
     return
 
 def delete_file(file_name):
-
     os.remove(file_name)
+    
     return
 
 def main():
