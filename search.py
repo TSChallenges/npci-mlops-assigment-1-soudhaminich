@@ -22,7 +22,14 @@ def sed(old_pattern, new_pattern, file_name):
 
 def awk(n, file_name):
     # ...
-
+    n = int(n)
+    with open(file_name, 'r') as fp:
+        for line in fp:
+            columns = line.split()
+            if(len(columns)) >= n:
+                print(columns[n-1])
+            else:
+                print("Column not found", n)
     return
 
 def main():
