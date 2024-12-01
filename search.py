@@ -7,13 +7,23 @@ def grep(pattern, file_name):
                 print(line.strip())
     return 
 
-def sed(old_pattern, new_patten, file_name):
+def sed(old_pattern, new_pattern, file_name):
     # ... 
-    return 
+    with open(file_name, 'r') as fp:
+        lines = fp.readlines()
+    with open(file_name, 'w') as fp:
+        for line in lines:
+            updated_line = re.sub(old_pattern, new_pattern, line)#replace old pattern with new pattern
+            fp.write(updated_line)#update new pattern lines in the file
+    with open(file_name, 'r') as fp:
+        for line in fp:
+            print(line.strip())
+    return
 
 def awk(n, file_name):
     # ...
-    return 
+
+    return
 
 def main():
     file_name = input("Enter the file name")
